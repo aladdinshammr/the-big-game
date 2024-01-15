@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 /*
 --- 01 TYPOGRAPHY SYSTEM
 
@@ -11,28 +12,6 @@
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
-:root {
-  --color-primary: #5ec576;
-  --color-secondary: #ffcb03;
-  --color-tertiary: #ff585f;
-  --color-primary-darker: #4bbb7d;
-  --color-secondary-darker: #ffbb00;
-  --color-tertiary-darker: #fd424b;
-  --color-primary-opacity: #5ec5763a;
-  --color-secondary-opacity: #ffcd0331;
-  --color-tertiary-opacity: #ff58602d;
-  --gradient-primary: linear-gradient(
-    to top left,
-    #39b385,
-    #9be15d
-  );
-  --gradient-secondary: linear-gradient(
-    to top left,
-    #ffb003,
-    #ffcb03
-  );
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -45,9 +24,128 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  color: #444;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  color: #333;
   line-height: 1.9;
-  background-color: #f3f3f3;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    to top left,
+    #753682 0%,
+    #bf2e34 100%
+  );
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  border-radius: 11px;
+  position: relative;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  filter: blur();
+  backdrop-filter: blur;
+}
+
+.player {
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 6.4rem;
+  transition: all 0.3s;
+  opacity: 0.8;
+}
+
+.player-name {
+  font-size: 4.4rem;
+  font-weight: 400;
+}
+
+.player-score {
+  font-size: 8.6rem;
+  color: #c7365f;
+}
+
+.current-box {
+  background-color: #c7365f;
+  display: inline-block;
+  padding: 1.6rem 4.8rem;
+  border-radius: 9px;
+  margin-top: 9.6rem;
+}
+
+.current-label {
+  color: #eee;
+  font-size: 1.8rem;
+}
+
+.current-score {
+  font-size: 3rem;
+  color: #eee;
+}
+
+.player.active {
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+.player.active .player-name {
+  font-weight: 600;
+}
+
+.btn {
+  position: absolute;
+  display: inline-block;
+  border: none;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 1.8rem;
+  color: #666;
+  padding: 1.4rem 5rem;
+  font-weight: 600;
+  border-radius: 100px;
+  cursor: pointer;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.btn--new-game {
+  left: 50%;
+  top: 5%;
+}
+.dice-img {
+  position: absolute;
+  display: flex;
+  width: 10%;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2.4rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--roll {
+  bottom: 22.5%;
+  left: 50%;
+}
+
+.btn--hold {
+  bottom: 11%;
+  left: 50%;
+}
+
+.player.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .player-name {
+  color: #c7365f;
+}
+
+.hidden {
+  display: none;
 }
