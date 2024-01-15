@@ -57,7 +57,7 @@ main {
   width: 50%;
   background-color: rgba(255, 255, 255, 0.3);
   padding: 6.4rem;
-  transition: all 0.3s;
+  transition: all 0.75s;
   opacity: 0.8;
 }
 
@@ -114,7 +114,12 @@ main {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-.btn--new-game {
+.btn:disabled {
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+}
+
+.btn--new {
   left: 50%;
   top: 5%;
 }
